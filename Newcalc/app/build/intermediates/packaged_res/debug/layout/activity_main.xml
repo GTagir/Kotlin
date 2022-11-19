@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray60"
+    android:paddingTop="@dimen/text_size24"
+    android:orientation="vertical"
+    android:theme="@style/MyCoolStyle">
+
+<!--    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/margin16"
+        android:autofillHints="no"
+        android:gravity="end"
+        android:text="@string/key_0"
+        android:textSize="@dimen/text_size60"
+        android:background="@color/gray60"
+        tools:ignore="MissingConstraints" />-->
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_AC"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/key_AC"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+        android:textColor="@color/red"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toStartOf="@+id/key_del"
+        app:layout_constraintStart_toStartOf="parent"/>
+<!--        app:layout_constraintTop_toBottomOf="@+id/result"-->
+<!--        tools:ignore="MissingConstraints"/>-->
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_del"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+        android:text="@string/key_del"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toStartOf="@+id/key_percent"
+        app:layout_constraintStart_toEndOf="@+id/key_AC"/>
+<!--        app:layout_constraintTop_toBottomOf="@+id/result"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_percent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/key_percent"
+        android:textColor="@color/black"
+
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toStartOf="@+id/key_division"
+        app:layout_constraintStart_toEndOf="@+id/key_del"/>
+<!--        app:layout_constraintTop_toBottomOf="@+id/result"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_division"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+
+        android:text="@string/key_division"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toEndOf="@+id/key_percent"/>
+<!--        app:layout_constraintTop_toBottomOf="@+id/result"-->
+
+<!--        tools:ignore="MissingConstraints" />-->
+
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/key_7"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toStartOf="@+id/key_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/key_AC"
+
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/key_8"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toStartOf="@+id/key_9"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/key_7"
+        app:layout_constraintTop_toBottomOf="@+id/key_del"
+
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/key_9"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toStartOf="@+id/key_multiplication"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/key_8"
+        app:layout_constraintTop_toBottomOf="@+id/key_percent"
+
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_multiplication"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/key_multiplication"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/key_9"
+        app:layout_constraintTop_toBottomOf="@+id/key_division"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+
+        tools:ignore="MissingConstraints" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/key_4"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toStartOf="@+id/key_5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/key_7"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/key_5"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toStartOf="@+id/key_6"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/key_4"
+        app:layout_constraintTop_toBottomOf="@+id/key_8"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/key_6"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toStartOf="@+id/key_subtraction"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/key_5"
+        app:layout_constraintTop_toBottomOf="@+id/key_9"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_subtraction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/key_subtraction"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/key_6"
+        app:layout_constraintTop_toBottomOf="@+id/key_multiplication"
+
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/key_1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toStartOf="@+id/key_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/key_4"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/key_2"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toStartOf="@+id/key_3"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/key_1"
+        app:layout_constraintTop_toBottomOf="@+id/key_5"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/key_3"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toStartOf="@+id/key_addition"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/key_2"
+        app:layout_constraintTop_toBottomOf="@+id/key_6"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_addition"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/key_addition"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/key_3"
+        app:layout_constraintTop_toBottomOf="@+id/key_subtraction"
+
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+
+        tools:ignore="MissingConstraints,TextContrastCheck" />
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_0"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/key_0"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toStartOf="@+id/key_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/key_1"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_dot"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/key_point"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toStartOf="@+id/key_3"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/key_0"
+        app:layout_constraintTop_toBottomOf="@+id/key_2"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+        tools:ignore="MissingConstraints" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:backgroundTintMode="screen"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@drawable/rounded_gradient"
+
+        android:id="@+id/key_equally"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="2"
+        android:text="@string/key_equally"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size24"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/key_dot"
+        app:layout_constraintTop_toBottomOf="@+id/key_3"
+
+        android:gravity="center"
+        android:layout_margin="@dimen/margin16"
+
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
