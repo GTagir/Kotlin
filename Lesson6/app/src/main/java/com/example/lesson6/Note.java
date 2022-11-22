@@ -38,8 +38,13 @@ public class Note {
     public static Note getNote(int index) {
         String title = String.format("Заметка %d", index);
         String description = String.format("Описание заметки %d", index);
-        LocalDateTime creationDate = LocalDateTime.now().plusDays(random.nextInt(5));
+        LocalDateTime creationDate = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            creationDate = LocalDateTime.now().plusDays(random.nextInt(5));
+        }
         return new Note(title,description,creationDate);
     }
 
 }
+/*
+    LocalDateTime creationDate = LocalDateTime.now().plusDays(random.nextInt(5));*/
