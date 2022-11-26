@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,11 +14,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.TextView;
 
 public class Fragment_note extends Fragment {
 
     static final String ARG_INDEX = "index";
+
+    private DatePicker mDatePicker;
+
 
     public Fragment_note(){
 
@@ -25,6 +31,7 @@ public class Fragment_note extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (savedInstanceState != null)
             requireActivity().getSupportFragmentManager().popBackStack();
     }
@@ -40,6 +47,15 @@ public class Fragment_note extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Bundle arguments = getArguments();
+
+        Button buttonCalend = view.findViewById(R.id.btn2);
+        buttonCalend.setOnClickListener(view1 -> {
+            requireActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.notes_container, new CalendarFragment())
+                    .commit();
+        });
+
 
         Button buttonBack = view.findViewById(R.id.btnBack);
         buttonBack.setOnClickListener(view1 -> {
@@ -66,6 +82,7 @@ public class Fragment_note extends Fragment {
             tvDescription.setText(Note.getNotes()[index].getDescription());
         }
     }
+
 
     public static Fragment_note newInstance(int index){
         Fragment_note fragment = new Fragment_note();
