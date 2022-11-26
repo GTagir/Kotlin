@@ -50,9 +50,10 @@ public class Fragment_note extends Fragment {
 
         Button buttonCalend = view.findViewById(R.id.btn2);
         buttonCalend.setOnClickListener(view1 -> {
-            requireActivity().getSupportFragmentManager()
+            getChildFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.notes_container, new CalendarFragment())
+                    .replace(R.id.cont_note, new CalendarFragment())
+                    .addToBackStack(null)
                     .commit();
         });
 
