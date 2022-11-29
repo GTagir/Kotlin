@@ -40,9 +40,9 @@ public class CalendarFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button buttonBack2 = view.findViewById(R.id.btnBack2);
+/*        Button buttonBack2 = view.findViewById(R.id.btnBack2);
         buttonBack2.setOnClickListener(view1 -> {
             requireActivity().getSupportFragmentManager().popBackStack();
-        });
+        });*/
     }
 }

@@ -1,30 +1,42 @@
 package com.example.lesson6;
 
 import android.annotation.SuppressLint;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Random;
 
-public class Note {
+    public class Note implements Parcelable {
     private static final Random random = new Random();
-    private static Note[] notes;
-
+    private static ArrayList<Note> notes;
+    private static int counter;
+    private int id;
     private String title;
     private String description;
     private LocalDateTime creationDate;
 
+        public int getId() {
+            return id;
+        }
+
     public void setTitle(String title){this.title = title;}
     public void setDescription(String description){this.description = description;}
     public void setCreationDate(LocalDateTime creationDate) {this.creationDate = creationDate;}
-    public static Note[] getNotes(){return notes;}
+    public static ArrayList<Note> getNotes(){return notes;}
     public String getTitle(){return title;}
     public String getDescription(){return description;}
     public LocalDateTime getCreationDate(){return creationDate;}
 
+        {
+            id = ++counter;
+        }
+
     static {
-        notes = new Note[10];
-        for (int i = 0; i < notes.length; i++) {
-            notes[i] = Note.getNote(i);
+        notes = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            notes.add(Note.getNote(i));
         }
     }
 
@@ -45,6 +57,34 @@ public class Note {
         return new Note(title,description,creationDate);
     }
 
-}
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel parcel, int i) {
+            parcel.writeInt(getId());
+            parcel.writeString(getTitle());
+            parcel.writeString(getDescription());
+        }
+        protected Note(Parcel parcel){
+            id = parcel.readInt();
+            title = parcel.readString();
+            description = parcel.readString();
+        }
+
+        public static final Creator<Note> CREATOR = new Creator<Note>() {
+            @Override
+            public Note createFromParcel(Parcel parcel) {
+                return new Note(parcel);
+            }
+
+            @Override
+            public Note[] newArray(int i) {
+                return new Note[i];
+            }
+        };
+    }
 /*
     LocalDateTime creationDate = LocalDateTime.now().plusDays(random.nextInt(5));*/

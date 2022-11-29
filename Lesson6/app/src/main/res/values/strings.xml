@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="button_back">Назад</string>
     <string name="button_2">Календарь</string>
+    <string name="action_info">Info</string>
+    <string name="action_share">Share</string>
+    <string name="action_exit">Exit</string>
 </resources>
