@@ -1,11 +1,13 @@
 package com.example.lesson6;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,7 +35,25 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "share", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.action_exit:
-                        Toast.makeText(MainActivity.this, "exit", Toast.LENGTH_SHORT).show();
+
+                        new AlertDialog.Builder(MainActivity.this)
+                                .setTitle("Title")
+                                .setMessage("Вы уверенны, что хотите выйти?")
+                                .setPositiveButton("Да!", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Toast.makeText(MainActivity.this, "exitDialog", Toast.LENGTH_SHORT).show();
+                                        System.exit(0);
+                                            }
+                                })
+                                .setNegativeButton("Нет!", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                                    }
+                                })
+                                .show();
+
                         return true;
                 }
                 return false;}
@@ -56,21 +76,26 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "share", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.action_exit:
-                Toast.makeText(this, "exit", Toast.LENGTH_SHORT).show();
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Title")
+                        .setMessage("Вы уверенны, что хотите выйти?")
+                        .setCancelable(false)
+                        .setPositiveButton("Да!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Toast.makeText(MainActivity.this, "exit", Toast.LENGTH_SHORT).show();
+                                System.exit(0);
+                            }
+                        })
+                        .setNegativeButton("Нет!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        })
+                        .show();
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
-
-    /*    Button buttonCalendar = view.findViewById(R.id.btn2);
-        buttonCalendar.setOnClickListener(view1 -> {
-        String visibilityStr = R.layout.fragment_note.Fragment_note.findViewById(R.id.datePicker);
-
-        R.layout.fragment_note.Fragment_note.DatePicker.visibility="visible";;
-
-        if (visibilityStr.equals("0"))
-            DatePicker.setVisibility(View.INVISIBLE);
-        else
-            DatePicker.setVisibility(View.VISIBLE);
-    });*/
 }
