@@ -4,4 +4,7 @@
     <string name="action_info">Info</string>
     <string name="notes_list">Notes</string>
     <string name="info">Info</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>
