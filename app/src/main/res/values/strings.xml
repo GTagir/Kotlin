@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Kotlin</string>
+<string name="app_name">My First App On Kotlin</string>
+<string name="motivation_for_action_press">Кнопка</string>
+<string name="waiting_message_button_press">Ожидаю нажатия кнопки…</string>
+<string name="message_text_empty">Пусто</string>
+<string name="loop_is_ready_to_start">Цикл готов к запуску! </string>
+<string name="loop_started">Цикл запущен / работает… </string>
+<string name="loop_finished">Цикл завершил работу!</string>
+<string name="loop_yell_one">Первый!</string>
+<string name="loop_yell_two">Второй!</string>
+<string name="loop_yell_calculation_is_over">Расчёт окончен!</string>
 </resources>
