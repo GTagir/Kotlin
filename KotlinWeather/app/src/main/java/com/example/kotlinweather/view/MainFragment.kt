@@ -46,11 +46,6 @@ class MainFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-//        val observer0 = object : Observer<Any> {
-//            override fun onChanged(t: Any?) {
-//                renderData(t!!)
-//            }
-//        }
 
         val observer = Observer<AppState> {
             renderData(it)
