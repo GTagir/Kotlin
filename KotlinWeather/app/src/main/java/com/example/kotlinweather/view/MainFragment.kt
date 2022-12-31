@@ -83,6 +83,7 @@ class MainFragment : Fragment() {
         }
     }
 
+
     private fun setData(weatherData : Weather) {
         binding.cityName.text = weatherData.city.city
 
